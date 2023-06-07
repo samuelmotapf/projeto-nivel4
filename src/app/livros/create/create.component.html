@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">Catálogo de Livros</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" routerLink="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Livros
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="/livros/home">Listar</a></li>
+              <li><a class="dropdown-item" routerLink="/livros/create">Registar</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" routerLink="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Editoras
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="/editoras/home">Listar</a></li>
+              <li><a class="dropdown-item" routerLink="/editoras/create">Registar</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  
+  <form (ngSubmit)="salvarDados()">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Título</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="" [(ngModel)]="titulo" (ngModelChange)="onChangeTituloLivro($event)" [ngModelOptions]="{standalone: true}" name="titulo">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Resumo</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1"  [(ngModel)]="resumo" (ngModelChange)="onChangeTituloLivro($event)" [ngModelOptions]="{standalone: true}" name="resumo" rows="3"></textarea>
+      </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Editora</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="editora" (ngModelChange)="onChangeTituloLivro($event)" [ngModelOptions]="{standalone: true}" name="editora">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Autores (1 por linha)</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1"  [(ngModel)]="autores" (ngModelChange)="onChangeTituloLivro($event)" [ngModelOptions]="{standalone: true}" name="autores" rows="3"></textarea>
+      </div>
+    <button type="submit" class="btn btn-primary">Salvar Dados</button>
+  </form>
+ 
